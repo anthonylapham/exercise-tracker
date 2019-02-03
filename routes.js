@@ -4,7 +4,8 @@ const User = require('./models/User');
 const Exercise = require('./models/Exercise');
 
 router.get('/', (req, res) => {
-  res.send('Server is up!')
+  //res.send('Server is up!')
+  res.render('index');
 });
 
 router.post('/new-user', (req, res) => {
