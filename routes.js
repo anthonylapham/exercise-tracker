@@ -16,6 +16,7 @@ router.post('/new-user', (req, res) => {
   user.save(err => {
     if (err) return res.status(500).json({ err });
     return res.status(200).send({ success: true, user });
+    res.render(index);
   });
 });
 
@@ -38,6 +39,7 @@ router.post('/add', (req, res) => {
     exercise.save(err => {
       if (err) return res.status(500).json({ err });
       return res.status(200).send({ success: true, exercise });
+      res.render(index);
     });
 
   });
@@ -52,6 +54,7 @@ router.get('/log', (req, res) => {
       if (err) return res.status(500).json({ err });
       if (!results) return res.status(200).send({ success: true, msg: 'No exercise data', results });
       res.status(200).send({ success: true, results });
+      res.render(index);
     });
   });
 });

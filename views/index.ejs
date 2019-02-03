@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-  <link href="style.css" rel="stylesheet" type="text/css">
-    <meta charset="utf-8">
-    <title>Exercise Tracker</title>
-    <h1>Exercise Tracker</h1>
-  </head>
-  <body>
-    <form method="post" id="userName">Username:<input type="text"></input><input type="submit"></input></form>
-    <form method="post" id="exerciseForm">
-      UserId:<input type="text"></input>
-      Description:<input type="text"></input>
-      Duration:<input type="text"></input>
-      Date:<input type="text"></input>
-      <input type="submit"></input>
-    </form>
 
-  </body>
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Exercise Tracker</title>
+  <h1>Exercise Tracker</h1>
+</head>
+
+<body>
+  <div class="container">
+    <form method="post" id="userName" class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Username</label>
+          <input id="name" type="text" placeholder="Username">
+    </div>
+       <button type="submit" class="pure-button pure-button-primary" id="userNameSubmit">Submit</button>
+    </fieldset>
+    </form>
+  </div>
+  <div class="container">
+    <form method="post" id="exerciseForm" class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="UserId">UserId</label>
+          <input id="userId" type="text" placeholder="UserId">
+    </div>
+    <div class="pure-control-group">
+      <label for="description">Description</label>
+      <input id="description" type="text" placeholder="Description">
+    </div>
+    <div class="pure-control-group">
+      <label for="duration">Duration</label>
+      <input id="duration" type="time">
+    </div>
+    <div class="pure-control-group">
+      <label for="date">Date</label>
+      <input id="date" type="date">
+    </div>
+       <button type="submit" class="pure-button pure-button-primary" id="exerciseSubmit">Submit</button>
+    </fieldset>
+    </form>
+  </div>
+
+</body>
+
 </html>
