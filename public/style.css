@@ -1,11 +1,25 @@
 body{
-  background-color: #B9BFC2;
+  background-color: #174d6b30;
+  text-shadow: 6px 1px 13px black;
+}
+
+#header{
 }
 
 #userNameSubmit{
-
+  font-size: 20px;
+  position: absolute;
+  right: 60%;
+  top: 13%;
+  background-color: #9B87E1;
+  color: #182424;
+  box-shadow: -1px 1px 15px 4px black;
 }
 
 #exerciseSubmit{
-
+  font-size: 20px;
+  position: absolute;
+  right: 75%;
+  color: #182424;
+  box-shadow: 0px 1px 19px 7px black;
 }
