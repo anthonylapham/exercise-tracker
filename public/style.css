@@ -3,7 +3,8 @@ body{
   text-shadow: 6px 1px 13px black;
 }
 
-#header{
+.hidden{
+  display: none;
 }
 
 #userNameSubmit{

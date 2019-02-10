@@ -1,0 +1,3 @@
+//check if username is valid
+//if username is valid, hide username submit, and open exerciseDiv
+//input information into exercise div and send to database
