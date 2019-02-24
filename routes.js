@@ -16,7 +16,9 @@ router.post('/new-user', (req, res) => {
   user.save(err => {
     if (err) return res.status(500).json({ err });
     return res.status(200).send({ success: true, user });
-    res.render(index);
+    return res.render('index', {
+          user : result.username
+        })
   });
 });
 

@@ -12,10 +12,14 @@
 <body>
   <div class="container">
     <form method="post" id="userName" class="pure-form pure-form-aligned">
+      <% if (user) { %>
+      <% document.getElementById("userName").style.display = 'none'; %>
+      <% document.getElementById("exerciseDiv").style.display = 'block'; %>
+      <% } %>
       <fieldset>
         <div class="pure-control-group">
           <label for="name">Username</label>
-          <input id="name" type="text" placeholder="Username">
+          <input id="name" type="text" placeholder="Username" autocomplete="off">
     </div>
           <button type="submit" class="pure-button pure-button-primary" id="userNameSubmit">Submit</button>
       </fieldset>
