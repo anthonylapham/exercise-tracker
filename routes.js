@@ -5,7 +5,7 @@ const Exercise = require('./models/Exercise');
 
 router.get('/', (req, res) => {
   //res.send('Server is up!')
-  res.render('index');
+  res.render('index', { user: null });
 });
 
 router.post('/new-user', (req, res) => {
@@ -15,10 +15,9 @@ router.post('/new-user', (req, res) => {
   });
   user.save(err => {
     if (err) return res.status(500).json({ err });
-    return res.status(200).send({ success: true, user });
     return res.render('index', {
-          user : result.username
-        })
+          user
+        });
   });
 });
 

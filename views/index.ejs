@@ -11,38 +11,48 @@
 
 <body>
   <div class="container">
-    <form method="post" id="userName" class="pure-form pure-form-aligned">
-      <% if (user) { %>
-      <% document.getElementById("userName").style.display = 'none'; %>
-      <% document.getElementById("exerciseDiv").style.display = 'block'; %>
-      <% } %>
+    <% var userDisplay = 'block'; %>
+    <% var exerciseDisplay = 'none'; %>
+    <% var userId = ''; %>
+    <% if (user) { %>
+      <% userDisplay = 'none'; %>
+      <% exerciseDisplay = 'block'; %>
+      <% userId = user._id; %>
+    <% } %>
+    <form
+      method="post"
+      id="userName"
+      class="pure-form pure-form-aligned"
+      action="/api/exercise/new-user"
+      style="display: <%= userDisplay %>;"
+    >
       <fieldset>
         <div class="pure-control-group">
           <label for="name">Username</label>
-          <input id="name" type="text" placeholder="Username" autocomplete="off">
+          <input id="name" type="text" placeholder="Username" autocomplete="off" name="username">
     </div>
           <button type="submit" class="pure-button pure-button-primary" id="userNameSubmit">Submit</button>
       </fieldset>
     </form>
   </div>
-  <div class="hidden" id="exerciseDiv">
-    <form method="post" id="exerciseForm" class="pure-form pure-form-aligned">
+  <div id="exerciseDiv" style="display: <%= exerciseDisplay %>;">
+    <form method="post" id="exerciseForm" class="pure-form pure-form-aligned" action="/api/exercise/add">
       <fieldset>
         <div class="pure-control-group">
           <label for="UserId">UserId</label>
-          <input id="userId" type="text" placeholder="UserId">
+          <input id="userId" type="text" placeholder="UserId" value="<%= userId %>" name="userId">
     </div>
           <div class="pure-control-group">
             <label for="description">Description</label>
-            <input id="description" type="text" placeholder="Description">
+            <input id="description" type="text" placeholder="Description" name="description">
     </div>
             <div class="pure-control-group">
               <label for="duration">Duration</label>
-              <input id="duration" type="time">
+              <input id="duration" type="number" name="duration" min="0">
     </div>
               <div class="pure-control-group">
                 <label for="date">Date</label>
-                <input id="date" type="date">
+                <input id="date" type="date" name="date">
     </div>
                 <button type="submit" class="pure-button pure-button-primary" id="exerciseSubmit">Submit</button>
       </fieldset>
